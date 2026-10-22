@@ -109,6 +109,21 @@ border-radius:8px;
 font-weight:bold;
 }
 
+.btn{
+    display:inline-block;
+    padding:10px 22px;
+    background:#ff9933;
+    color:#fff;
+    text-decoration:none;
+    border-radius:6px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#e67e00;
+}
+
 section{
 padding:60px 8%;
 }
