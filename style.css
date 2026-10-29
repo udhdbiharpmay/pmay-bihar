@@ -496,3 +496,47 @@ transparent 75%);
 opacity:0;
 transition:1s;
 }
+#applicationForm{
+    background:#f8f9fa;
+    padding:60px 20px;
+}
+
+.pmay-form,
+#pmayForm{
+    max-width:1000px;
+    margin:auto;
+    background:#fff;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 0 15px rgba(0,0,0,.1);
+}
+
+.form-step{
+    display:none;
+}
+
+.form-step.active{
+    display:block;
+}
+
+.form-step input,
+.form-step select,
+.form-step textarea{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border:1px solid #ccc;
+    border-radius:6px;
+}
+
+.form-navigation{
+    margin-top:20px;
+    display:flex;
+    justify-content:space-between;
+}
+
+.step-indicator{
+    text-align:center;
+    font-weight:700;
+    margin-bottom:20px;
+}
