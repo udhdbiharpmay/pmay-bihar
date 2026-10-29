@@ -87,11 +87,9 @@
                 प्रधानमंत्री आवास योजना (शहरी) 2.0
             </p>
 
-            <a href="https://pmaymis.gov.in/PMAYMIS2_2024/PMAY_SURVEY/EligiblityCheck.aspx"
-                target="_blank"
-                class="btn">
-                Apply Now
-            </a>
+            <a href="#applicationForm" class="btn">
+   		Apply
+	</a>
 
         </div>
 
@@ -154,11 +152,9 @@
 
                 <h3>Apply PMAY-U 2.0</h3>
 
-                <a href="https://pmaymis.gov.in/PMAYMIS2_2024/PMAY_SURVEY/EligiblityCheck.aspx"
-                    target="_blank"
-                    class="btn">
-                    Apply
-                </a>
+                <a href="#applicationForm" class="btn">
+   			 Apply
+		</a>
 
             </div>
 
@@ -179,6 +175,198 @@
         </div>
 
     </section>
+
+<!-- PMAY APPLICATION FORM START -->
+
+<section id="applicationForm">
+
+<h2 class="section-title">
+PMAY-U 2.0 Online Application Form
+</h2>
+
+<div class="step-indicator">
+Step <span id="stepNumber">1</span> of 7
+</div>
+
+<form id="pmayForm">
+
+<div class="form-step active">
+
+<h3>Eligibility Check</h3>
+
+<label>Annual Household Income</label>
+<input type="number" required>
+
+<label>Own Pucca House?</label>
+<select required>
+<option>No</option>
+<option>Yes</option>
+</select>
+
+<label>Housing Benefit Taken Earlier?</label>
+<select required>
+<option>No</option>
+<option>Yes</option>
+</select>
+
+</div>
+
+<div class="form-step">
+
+<h3>Aadhaar Verification</h3>
+
+<input type="text"
+placeholder="Aadhaar Number"
+required>
+
+<input type="text"
+placeholder="Name as per Aadhaar"
+required>
+
+<input type="text"
+placeholder="Enter OTP">
+
+</div>
+
+<div class="form-step">
+
+<h3>Personal Details</h3>
+
+<input type="text"
+placeholder="Applicant Name"
+required>
+
+<input type="date">
+
+<input type="text"
+placeholder="Mobile Number">
+
+<input type="email"
+placeholder="Email ID">
+
+<select>
+<option>Male</option>
+<option>Female</option>
+<option>Other</option>
+</select>
+
+<input type="text"
+placeholder="Father Name">
+
+<input type="text"
+placeholder="Mother Name">
+
+</div>
+
+<div class="form-step">
+
+<h3>Family Details</h3>
+
+<input type="text"
+placeholder="Family Member Name">
+
+<input type="text"
+placeholder="Relation">
+
+<input type="text"
+placeholder="Occupation">
+
+<input type="text"
+placeholder="Family Member Aadhaar">
+
+</div>
+
+<div class="form-step">
+
+<h3>Address & Household Details</h3>
+
+<input type="text"
+placeholder="Category (EWS/LIG/MIG)">
+
+<input type="text"
+placeholder="House Type">
+
+<textarea
+placeholder="Present Address">
+</textarea>
+
+<textarea
+placeholder="Permanent Address">
+</textarea>
+
+<textarea
+placeholder="Construction Site Address">
+</textarea>
+
+</div>
+
+<div class="form-step">
+
+<h3>Bank & Documents</h3>
+
+<input type="text"
+placeholder="Bank Account Number">
+
+<input type="text"
+placeholder="IFSC Code">
+
+<label>Aadhaar Upload</label>
+<input type="file">
+
+<label>Income Certificate</label>
+<input type="file">
+
+<label>Land Document</label>
+<input type="file">
+
+</div>
+
+<div class="form-step">
+
+<h3>Declaration</h3>
+
+<label>
+<input type="checkbox" required>
+I hereby declare that all information furnished is correct.
+</label>
+
+<br><br>
+
+<div id="applicationId"></div>
+
+</div>
+
+<div class="form-navigation">
+
+<button
+type="button"
+id="prevBtn"
+class="btn">
+Previous
+</button>
+
+<button
+type="button"
+id="nextBtn"
+class="btn">
+Next
+</button>
+
+<button
+type="submit"
+id="submitBtn"
+class="btn">
+Final Save
+</button>
+
+</div>
+
+</form>
+
+</section>
+
+<!-- PMAY APPLICATION FORM END -->
+
 
     <!-- GUIDELINES -->
 
