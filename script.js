@@ -129,3 +129,20 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 });
+
+const panda =
+document.getElementById("panda");
+
+passwordField.addEventListener("focus",()=>{
+
+    panda.style.transform =
+    "rotate(-8deg) scale(1.08)";
+
+});
+
+passwordField.addEventListener("blur",()=>{
+
+    panda.style.transform =
+    "rotate(0deg) scale(1)";
+
+});
