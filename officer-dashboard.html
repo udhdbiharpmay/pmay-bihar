@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Officer Dashboard</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+background:#f4f6f9;
+}
+
+header{
+background:#00695c;
+color:white;
+padding:20px;
+text-align:center;
+}
+
+.dashboard{
+padding:40px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.card{
+background:white;
+padding:35px;
+border-radius:15px;
+text-align:center;
+box-shadow:0 4px 15px rgba(0,0,0,.1);
+cursor:pointer;
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+background:#e8f5e9;
+}
+
+.card h3{
+color:#00695c;
+margin-bottom:10px;
+}
+
+.card p{
+color:#666;
+}
+
+.logout{
+margin-top:30px;
+text-align:center;
+}
+
+.logout button{
+padding:12px 30px;
+border:none;
+background:#d32f2f;
+color:#fff;
+border-radius:8px;
+cursor:pointer;
+}
+
+footer{
+margin-top:40px;
+background:#0f172a;
+color:white;
+text-align:center;
+padding:20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<h1>
+PMAY-U 2.0 Bihar
+Officer Dashboard
+</h1>
+
+<p>
+Welcome Admin
+</p>
+
+</header>
+
+<div class="dashboard">
+
+<div class="grid">
+
+<div class="card">
+<h3>📊 Reports</h3>
+<p>Application & MIS Reports</p>
+</div>
+
+<div class="card">
+<h3>⚡ Action</h3>
+<p>Approve / Reject Applications</p>
+</div>
+
+<div class="card">
+<h3>👤 Admin</h3>
+<p>User Management</p>
+</div>
+
+<div class="card">
+<h3>❓ FAQ</h3>
+<p>Frequently Asked Questions</p>
+</div>
+
+<div class="card">
+<h3>🔍 Track Application</h3>
+<p>Track Beneficiary Status</p>
+</div>
+
+<div class="card">
+<h3>➕ Create Login</h3>
+<p>Create New User Login</p>
+</div>
+
+<div class="card">
+<h3>🔐 Change Password</h3>
+<p>Update Password</p>
+</div>
+
+<div class="card">
+<h3>🏙 ULB Dashboard</h3>
+<p>City-wise Monitoring</p>
+</div>
+
+<div class="card">
+<h3>📍 Geo Tagging</h3>
+<p>Geo Verification Progress</p>
+</div>
+
+<div class="card">
+<h3>📥 Download Reports</h3>
+<p>Export Excel & PDF</p>
+</div>
+
+</div>
+
+<div class="logout">
+
+<button onclick="logout()">
+Logout
+</button>
+
+</div>
+
+</div>
+
+<footer>
+
+<h3>Government of Bihar</h3>
+
+<p>
+Urban Development & Housing Department
+</p>
+
+<p>
+PMAY-U 2.0 Bihar Portal
+</p>
+
+</footer>
+
+<script>
+
+function logout(){
+
+window.location.href =
+"officer-login.html";
+
+}
+
+</script>
+
+</body>
+</html>
