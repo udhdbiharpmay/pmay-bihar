@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PMAY-U 2.0 Bihar Officer Login</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#00695c,#138808);
+padding:20px;
+}
+
+.login-box{
+width:420px;
+background:#fff;
+border-radius:25px;
+padding:25px;
+text-align:center;
+box-shadow:0 10px 40px rgba(0,0,0,.25);
+}
+
+.logo{
+width:75px;
+height:75px;
+border-radius:50%;
+margin:auto;
+display:block;
+margin-bottom:10px;
+background:white;
+}
+
+h2{
+color:#00695c;
+margin-bottom:5px;
+}
+
+.subtitle{
+color:#666;
+margin-bottom:20px;
+}
+
+.panda-wrap{
+position:relative;
+width:210px;
+height:210px;
+margin:0 auto 15px;
+}
+
+.face{
+width:180px;
+height:180px;
+background:#fff;
+border:6px solid #222;
+border-radius:50%;
+position:absolute;
+left:15px;
+top:20px;
+}
+
+.ear{
+width:60px;
+height:60px;
+background:#222;
+border-radius:50%;
+position:absolute;
+}
+
+.left-ear{
+left:10px;
+top:0;
+}
+
+.right-ear{
+right:10px;
+top:0;
+}
+
+.patch{
+width:45px;
+height:55px;
+background:#222;
+border-radius:50%;
+position:absolute;
+top:45px;
+}
+
+.left-patch{
+left:30px;
+}
+
+.right-patch{
+right:30px;
+}
+
+.eye{
+width:11px;
+height:11px;
+background:#fff;
+border-radius:50%;
+position:absolute;
+top:22px;
+left:17px;
+transition:.2s;
+}
+
+.nose{
+width:18px;
+height:14px;
+background:#222;
+position:absolute;
+top:88px;
+left:81px;
+border-radius:50%;
+}
+
+.mouth{
+width:35px;
+height:20px;
+border-bottom:4px solid #222;
+position:absolute;
+left:70px;
+top:105px;
+}
+
+.hand{
+width:45px;
+height:95px;
+background:#222;
+position:absolute;
+bottom:-5px;
+border-radius:50px;
+transition:.5s;
+}
+
+.left-hand{
+left:0;
+}
+
+.right-hand{
+right:0;
+}
+
+.cover .left-hand{
+transform:translate(45px,-105px) rotate(-35deg);
+}
+
+.cover .right-hand{
+transform:translate(-45px,-105px) rotate(35deg);
+}
+
+input{
+width:100%;
+padding:12px;
+border:1px solid #ccc;
+border-radius:8px;
+margin:8px 0;
+font-size:15px;
+}
+
+button{
+width:100%;
+padding:12px;
+background:#00695c;
+border:none;
+border-radius:8px;
+color:white;
+font-size:16px;
+cursor:pointer;
+margin-top:10px;
+}
+
+button:hover{
+background:#004d40;
+}
+
+.error{
+color:red;
+margin-top:10px;
+font-weight:bold;
+}
+
+.success{
+color:green;
+margin-top:10px;
+font-weight:bold;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="login-box">
+
+<img src="Image/pmay-logo.jpg" class="logo">
+
+<h2>PMAY-U 2.0 Bihar</h2>
+<p class="subtitle">Officer Login</p>
+
+<div class="panda-wrap" id="panda">
+
+<div class="ear left-ear"></div>
+<div class="ear right-ear"></div>
+
+<div class="face">
+
+<div class="patch left-patch">
+<div class="eye" id="eye1"></div>
+</div>
+
+<div class="patch right-patch">
+<div class="eye" id="eye2"></div>
+</div>
+
+<div class="nose"></div>
+<div class="mouth"></div>
+
+</div>
+
+<div class="hand left-hand"></div>
+<div class="hand right-hand"></div>
+
+</div>
+
+<input
+type="text"
+id="userid"
+placeholder="User ID">
+
+<input
+type="password"
+id="password"
+placeholder="Password">
+
+<button onclick="login()">
+LOGIN
+</button>
+
+<div id="msg"></div>
+
+</div>
+
+<script>
+
+const panda =
+document.getElementById("panda");
+
+const password =
+document.getElementById("password");
+
+const userid =
+document.getElementById("userid");
+
+password.addEventListener("focus",()=>{
+
+panda.classList.add("cover");
+
+});
+
+password.addEventListener("blur",()=>{
+
+panda.classList.remove("cover");
+
+});
+
+userid.addEventListener("keyup",()=>{
+
+let len = userid.value.length;
+
+document.getElementById("eye1").style.transform=
+`translateX(${Math.min(len,6)}px)`;
+
+document.getElementById("eye2").style.transform=
+`translateX(${Math.min(len,6)}px)`;
+
+});
+
+function login(){
+
+let user=
+document.getElementById("userid").value;
+
+let pass=
+document.getElementById("password").value;
+
+if(user==="admin" && pass==="Pass123"){
+
+document.getElementById("msg").innerHTML=
+'<div class="success">Login Successful...</div>';
+
+setTimeout(()=>{
+
+window.location.href=
+"officer-dashboard.html";
+
+},1000);
+
+}else{
+
+document.getElementById("msg").innerHTML=
+'<div class="error">Invalid User ID or Password</div>';
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
