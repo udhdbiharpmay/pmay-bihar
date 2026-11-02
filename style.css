@@ -166,11 +166,15 @@ PORTAL CONTENT
 ===================== */
 
 #portalContent{
+    display:none;
     opacity:0;
-    transition:1.5s;
+    transition:1s;
+    width:100%;
+    min-height:100vh;
 }
 
 #portalContent.show{
+    display:block;
     opacity:1;
 }
 
@@ -539,4 +543,38 @@ transition:1s;
     text-align:center;
     font-weight:700;
     margin-bottom:20px;
+}
+
+.gov-header{
+    text-align:center;
+    color:white;
+    margin-bottom:20px;
+}
+
+.logo{
+    width:90px;
+    height:90px;
+    background:white;
+    border-radius:50%;
+    padding:5px;
+    margin-bottom:10px;
+}
+
+html,
+body{
+    width:100%;
+    min-height:100%;
+    overflow-x:hidden;
+    overflow-y:auto;
+}
+
+body{
+    background:#f4f6f9;
+}
+.panda-img{
+    width:180px;
+    transition:.4s;
+    filter:
+    drop-shadow(
+    0 12px 15px rgba(0,0,0,.3));
 }
