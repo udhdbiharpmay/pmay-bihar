@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>PMAY-U 2.0 Bihar Application Form</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f4f8fb;
+}
+
+header{
+    background:#0d47a1;
+    color:white;
+    padding:15px;
+}
+
+.header-container{
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo h2{
+    font-size:24px;
+}
+
+.btn{
+    background:#ff9800;
+    color:white;
+    text-decoration:none;
+    border:none;
+    padding:10px 20px;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+.btn:hover{
+    background:#e68900;
+}
+
+.form-container{
+    max-width:900px;
+    margin:30px auto;
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.15);
+}
+
+.section-title{
+    text-align:center;
+    color:#0d47a1;
+    margin-bottom:20px;
+}
+
+.step-indicator{
+    text-align:center;
+    margin-bottom:20px;
+    font-weight:bold;
+}
+
+.form-step{
+    display:none;
+}
+
+.form-step.active{
+    display:block;
+}
+
+input,
+select,
+textarea{
+    width:100%;
+    padding:12px;
+    margin-bottom:15px;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+
+textarea{
+    height:100px;
+}
+
+.form-navigation{
+    display:flex;
+    justify-content:space-between;
+    margin-top:20px;
+}
+
+#submitBtn{
+    display:none;
+}
+
+#applicationId{
+    margin-top:20px;
+    color:green;
+    font-size:20px;
+    font-weight:bold;
+    text-align:center;
+}
+
+footer{
+    background:#0d47a1;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:30px;
+}
+</style>
+
+</head>
+<body>
+
+<header>
+    <div class="header-container">
+        <div class="logo">
+            <h2>PMAY-U 2.0 Bihar</h2>
+        </div>
+
+        <a href="index.html" class="btn">
+            Back To Home
+        </a>
+    </div>
+</header>
+
+<div class="form-container">
+
+<h2 class="section-title">
+PMAY-U 2.0 Online Application Form
+</h2>
+
+<div class="step-indicator">
+Step <span id="stepNumber">1</span> of 7
+</div>
+
+<form id="pmayForm">
+
+<div class="form-step active">
+<h3>Eligibility Check</h3>
+
+<label>Annual Household Income</label>
+<input type="number" required>
+
+<label>Own Pucca House?</label>
+<select required>
+<option>No</option>
+<option>Yes</option>
+</select>
+
+<label>Housing Benefit Taken Earlier?</label>
+<select required>
+<option>No</option>
+<option>Yes</option>
+</select>
+</div>
+
+<div class="form-step">
+<h3>Aadhaar Verification</h3>
+
+<input type="text" placeholder="Aadhaar Number" required>
+
+<input type="text" placeholder="Name as per Aadhaar" required>
+
+<input type="text" placeholder="OTP">
+</div>
+
+<div class="form-step">
+<h3>Personal Details</h3>
+
+<input type="text" placeholder="Applicant Name">
+
+<input type="date">
+
+<input type="text" placeholder="Mobile Number">
+
+<input type="email" placeholder="Email ID">
+
+<select>
+<option>Male</option>
+<option>Female</option>
+<option>Other</option>
+</select>
+
+<input type="text" placeholder="Father Name">
+
+<input type="text" placeholder="Mother Name">
+</div>
+
+<div class="form-step">
+<h3>Family Details</h3>
+
+<input type="text" placeholder="Family Member Name">
+
+<input type="text" placeholder="Relation">
+
+<input type="text" placeholder="Occupation">
+
+<input type="text" placeholder="Family Member Aadhaar">
+</div>
+
+<div class="form-step">
+<h3>Address & Household Details</h3>
+
+<input type="text" placeholder="Category">
+
+<input type="text" placeholder="House Type">
+
+<textarea placeholder="Present Address"></textarea>
+
+<textarea placeholder="Permanent Address"></textarea>
+
+<textarea placeholder="Construction Site Address"></textarea>
+</div>
+
+<div class="form-step">
+<h3>Bank & Documents</h3>
+
+<input type="text" placeholder="Bank Account Number">
+
+<input type="text" placeholder="IFSC Code">
+
+<label>Aadhaar Upload</label>
+<input type="file">
+
+<label>Income Certificate Upload</label>
+<input type="file">
+
+<label>Land Document Upload</label>
+<input type="file">
+</div>
+
+<div class="form-step">
+<h3>Declaration</h3>
+
+<label>
+<input type="checkbox" required>
+I hereby declare that all information furnished is correct.
+</label>
+
+<div id="applicationId"></div>
+</div>
+
+<div class="form-navigation">
+
+<button type="button" id="prevBtn" class="btn">
+Previous
+</button>
+
+<button type="button" id="nextBtn" class="btn">
+Next
+</button>
+
+<button type="submit" id="submitBtn" class="btn">
+Final Save
+</button>
+
+</div>
+
+</form>
+
+</div>
+
+<footer>
+<h3>Government of Bihar</h3>
+<p>Urban Development & Housing Department</p>
+<p>PMAY-U 2.0 Bihar Portal</p>
+</footer>
+
+<script>
+
+let currentStep = 0;
+
+const steps = document.querySelectorAll(".form-step");
+const stepNumber = document.getElementById("stepNumber");
+const prevBtn = document.getElementById("prevBtn");
+const nextBtn = document.getElementById("nextBtn");
+const submitBtn = document.getElementById("submitBtn");
+
+function showStep(step){
+
+steps.forEach(s => s.classList.remove("active"));
+
+steps[step].classList.add("active");
+
+stepNumber.textContent = step + 1;
+
+prevBtn.style.display = step === 0 ? "none" : "inline-block";
+
+if(step === steps.length - 1){
+    nextBtn.style.display = "none";
+    submitBtn.style.display = "inline-block";
+}else{
+    nextBtn.style.display = "inline-block";
+    submitBtn.style.display = "none";
+}
+
+}
+
+showStep(currentStep);
+
+nextBtn.addEventListener("click", function(){
+
+if(currentStep < steps.length - 1){
+currentStep++;
+showStep(currentStep);
+}
+
+});
+
+prevBtn.addEventListener("click", function(){
+
+if(currentStep > 0){
+currentStep--;
+showStep(currentStep);
+}
+
+});
+
+document.getElementById("pmayForm").addEventListener("submit", function(e){
+
+e.preventDefault();
+
+let applicationId =
+"PMAY-BR-" + Math.floor(100000 + Math.random()*900000);
+
+document.getElementById("applicationId").innerHTML =
+"✅ Application Submitted Successfully<br><br>Application ID: <b>" +
+applicationId +
+"</b>";
+
+submitBtn.style.display = "none";
+
+});
+
+</script>
+
+</body>
+</html>
