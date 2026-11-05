@@ -289,59 +289,10 @@ async function askAI(){
     `;
 
     chat.innerHTML += `
-    <div id="loadingMsg" class="bot-msg">
-        🤖 Thinking...
+    <div class="bot-msg">
+        Testing...
     </div>
     `;
-
-    try {
-
-        const response = await fetch("/api/chat", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                question: question
-            })
-        });
-
-        const text = await response.text();
-
-console.log(text);
-
-document.getElementById("loadingMsg")?.remove();
-
-chat.innerHTML += `
-<div class="bot-msg">
-${text}
-</div>
-`;
-
-return;
-        }
-
-        let answer =
-        data?.candidates?.[0]?.content?.parts?.[0]?.text
-        || "कोई उत्तर प्राप्त नहीं हुआ।";
-
-        chat.innerHTML += `
-        <div class="bot-msg">
-            <b>PMAY Assistant:</b><br><br>
-            ${answer}
-        </div>
-        `;
-
-    } catch(error){
-
-        document.getElementById("loadingMsg")?.remove();
-
-        chat.innerHTML += `
-        <div class="bot-msg">
-            ${error.message}
-        </div>
-        `;
-    }
 
     document.getElementById("question").value = "";
 }
