@@ -289,10 +289,47 @@ async function askAI(){
     `;
 
     chat.innerHTML += `
-    <div class="bot-msg">
-        Testing...
+    <div id="loadingMsg" class="bot-msg">
+        🤖 Thinking...
     </div>
     `;
+
+    try {
+
+        const response = await fetch("/api/chat", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                question: question
+            })
+        });
+
+        const text = await response.text();
+
+        document.getElementById("loadingMsg").remove();
+
+        chat.innerHTML += `
+        <div class="bot-msg">
+            ${text}
+        </div>
+        `;
+
+        chat.scrollTop = chat.scrollHeight;
+
+    } catch(error){
+
+        if(document.getElementById("loadingMsg")){
+            document.getElementById("loadingMsg").remove();
+        }
+
+        chat.innerHTML += `
+        <div class="bot-msg">
+            Error: ${error.message}
+        </div>
+        `;
+    }
 
     document.getElementById("question").value = "";
 }
