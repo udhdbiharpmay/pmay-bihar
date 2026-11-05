@@ -306,17 +306,19 @@ async function askAI(){
             })
         });
 
-        const data = await response.json();
+        const text = await response.text();
 
-        document.getElementById("loadingMsg")?.remove();
+console.log(text);
 
-        if(data.error){
-            chat.innerHTML += `
-            <div class="bot-msg">
-                ${data.error}
-            </div>
-            `;
-            return;
+document.getElementById("loadingMsg")?.remove();
+
+chat.innerHTML += `
+<div class="bot-msg">
+${text}
+</div>
+`;
+
+return;
         }
 
         let answer =
