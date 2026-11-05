@@ -308,26 +308,20 @@ async function askAI(){
 
         const data = await response.json();
 
-document.getElementById("loadingMsg")?.remove();
+        document.getElementById("loadingMsg")?.remove();
 
-let answer =
-data?.candidates?.[0]?.content?.parts?.[0]?.text
-|| "कोई उत्तर प्राप्त नहीं हुआ।";
-
-chat.innerHTML += `
-<div class="bot-msg">
-<b>PMAY Assistant:</b><br><br>
-${answer}
-</div>
-`;
+        chat.innerHTML += `
+        <div class="bot-msg">
+            ${data.message}
+        </div>
+        `;
 
         chat.scrollTop = chat.scrollHeight;
 
-    } catch(error){
+    }
+    catch(error){
 
-        if(document.getElementById("loadingMsg")){
-            document.getElementById("loadingMsg").remove();
-        }
+        document.getElementById("loadingMsg")?.remove();
 
         chat.innerHTML += `
         <div class="bot-msg">
