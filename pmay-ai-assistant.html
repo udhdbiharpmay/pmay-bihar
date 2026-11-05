@@ -316,21 +316,51 @@ You are PMAY-U 2.0 Bihar AI Assistant.
 Rules:
 1. Answer only PMAY related questions.
 2. Give answers in Hindi.
-3. Be simple and helpful.
+3. Be simple and helpful.<script>
 
-Question:
-${question}
-`
-                    }]
-                }]
+function setQuestion(q){
+    document.getElementById("question").value = q;
+}
+
+async function askAI(){
+
+    let question = document.getElementById("question").value.trim();
+
+    if(question === ""){
+        alert("Please enter question");
+        return;
+    }
+
+    let chat = document.getElementById("chatBox");
+
+    chat.innerHTML += `
+    <div class="user-msg">
+        <b>You:</b><br>
+        ${question}
+    </div>
+    `;
+
+    chat.innerHTML += `
+    <div id="loadingMsg" class="bot-msg">
+        🤖 Thinking...
+    </div>
+    `;
+
+    chat.scrollTop = chat.scrollHeight;
+
+    try {
+
+        const response = await fetch("/api/chat", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                question: question
             })
         });
 
-        console.log("Status:", response.status);
-
         const data = await response.json();
-
-        console.log("Gemini Response:", data);
 
         let loading =
         document.getElementById("loadingMsg");
@@ -340,14 +370,12 @@ ${question}
         }
 
         if(data.error){
-
             chat.innerHTML += `
             <div class="bot-msg">
                 ❌ Error:<br>
-                ${data.error.message}
+                ${data.error}
             </div>
             `;
-
             return;
         }
 
