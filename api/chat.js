@@ -2,7 +2,7 @@ export default async function handler(req, res) {
 
   try {
 
-    const { question } = req.body;
+    const question = req.body?.question || "";
 
     const API_KEY = process.env.GEMINI_API_KEY;
 
